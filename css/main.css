@@ -1,0 +1,720 @@
+/************* Start Global Rules *************/
+:root {
+    --color-p: #a2a2a2;
+    --main-color: #19c8fa;
+    --duration: 0.3s;
+    --transparent-color: rgba(15, 116, 143, 0.7);
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*small is a normal property is not need @media*/
+
+/*medium اقل من 768 */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/*large اقل من 992 واكبر من 768 */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/*extra large اقل من 1200 واكبر من 992 */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/************* Ennnd Global Rules *************/
+/************* Start component *************/
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+}
+
+.sec-padding {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.main-heading {
+    text-align: center; /*true*/
+    width: 500px;
+    margin: 0 auto 100px;
+    max-width: 100%;
+}
+
+.main-heading h2 {
+    font-size: 40px; /*true 30pt*/
+    text-transform: uppercase; /*true*/
+    font-weight: normal; /*true*/
+    margin-bottom: 60px; /*true*/
+    position: relative; /*true*/
+    display: inline-block;
+}
+
+.main-heading h2::before {
+    content: ''; /*true*/
+    position: absolute; /*true*/
+    width: 70%; /*true*/
+    height: 2px; /*true*/
+    background-color: black; /*true*/
+    bottom: -30px; /*true*/
+    left: 50%; /*true*/
+    transform: translateX(-50%); /*true*/
+}
+
+.main-heading h2::after {
+    content: ''; /*true*/
+    position: absolute; /*true*/
+    width: 15px; /*true*/
+    height: 15px; /*true*/
+    border-radius: 50%; /*true*/
+    background-color: white; /*true*/
+    border: 2px solid black; /*true*/
+    bottom: -30px; /*true*/
+    left: 50%; /*true*/
+    transform: translate(-50%, 50%); /*true*/
+}
+
+.main-heading p {
+    font-size: 13pt;
+    color: var(--color-p);
+    line-height: 25pt;
+}
+
+/************* Ennnd component *************/
+
+/************* Start Header *************/
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+header .content {
+    position: relative; /*true*/
+    display: flex; /*true*/
+    justify-content: space-between; /*true*/
+    align-items: center; /*true*/
+    z-index: 1;
+    min-height: 97px; /*true*/
+}
+
+header .content::before {
+    content: ''; /*true*/
+    position: absolute; /*true*/
+    background-color: var(--color-p); /*true*/
+    height: 1px; /*true*/
+    bottom: 0; /*true*/
+    width: 100%; /*true*/
+}
+
+header .content .logo img {
+    height: 40px; /*true*/
+}
+
+header nav {
+    flex: 1; /*true*/
+    display: flex; /*true*/
+    justify-content: flex-end; /*true*/
+    align-items: center; /*true*/
+}
+
+header nav .toggle-menu {
+    color: white; /*true*/
+    font-size: 22px; /*true*/
+}
+
+@media (min-width: 768px) {
+    header nav .toggle-menu {
+        display: none; /*true*/
+    }
+}
+
+header nav ul {
+    display: flex;
+}
+
+@media (max-width: 767px) {
+    header nav ul {
+        display: none; /*true*/
+    }
+
+    header nav .toggle-menu:hover + ul {
+        display: flex; /*true*/
+        flex-direction: column; /*true*/
+        position: absolute; /*true*/
+        top: 100%; /*true*/
+        left: 0; /*true*/
+        width: 100%; /*true*/
+        background-color: rgb(0 0 0 / 50%);
+    }
+
+    header nav ul a {
+        padding: 15px !important;; /*true*/
+    }
+}
+
+header nav li a {
+    padding: 40px 10px; /*true*/
+    display: block; /*true*/
+    font-size: 14px; /*true*/
+    color: white; /*true*/
+    text-decoration: none; /*true*/
+    text-transform: uppercase; /*true*/
+    border-bottom: 1px solid var(--color-p);
+    position: relative; /*true*/
+    z-index: 3; /*true*/
+    transition: var(--duration); /*true 0.3s*/
+}
+
+header nav li a.active, header nav li a:hover {
+    color: var(--main-color); /*true*/
+    border-bottom: 1px solid var(--main-color);
+}
+
+header nav .form {
+    border-left: 2px solid var(--color-p); /*true*/
+    margin-left: 30px; /*true*/
+}
+
+header nav .form i {
+    color: white; /*true*/
+    padding: 8px 0px 8px 15px;
+}
+
+/************* Ennnd Header *************/
+/************* Start landing *************/
+.landing {
+    min-height: 100vh; /*true*/
+    position: relative; /*true*/
+    background-color: #1f2021; /*true*/
+    background-image: url("../img/landing.jpg"); /*true*/
+    background-size: cover; /*true*/
+}
+
+
+.landing .content {
+    position: absolute; /*true*/
+    left: 0; /*true*/
+    top: 50%; /*true*/
+    transform: translatey(-50%); /*true*/
+    width: 50%; /*true*/
+    padding: 50px; /*true*/
+    background-color: var(--transparent-color); /*true*/
+    color: white; /*true*/
+    z-index: 2;
+    display: flex; /*true*/
+    justify-content: flex-end; /*true*/
+}
+
+.landing .content .text {
+    width: 500px;
+}
+
+.landing .text h2 {
+    line-height: 1.5; /*true*/
+    margin-bottom: 20px; /*true*/
+    font-size: 32px; /*true*/
+    font-weight: normal; /*true*/
+}
+
+.landing .text p {
+    font-family: 'Myriad Pro';
+    font-size: 13pt;
+    line-height: 28pt; /*true*/
+}
+
+.change-background {
+    position: absolute; /*true*/
+    color: white; /*true*/
+    z-index: 88;
+    font-size: 25px;
+    top: 50%; /*true*/
+    transform: translateY(-50%); /*true*/
+    transition: var(--duration);
+}
+
+.landing .change-background.fa-angles-left {
+    left: 30px;
+}
+
+.landing .change-background.fa-angles-right {
+    right: 30px;
+}
+
+.landing .change-background.fa-angles-left:hover {
+    color: var(--transparent-color);
+    left: 25px;
+}
+
+.landing .change-background.fa-angles-right:hover {
+    color: var(--transparent-color);
+    right: 25px;
+}
+
+@media (max-width: 767px) {
+    .landing .content {
+        width: 100%;
+    }
+
+    .landing .content .text {
+        width: 100%;
+    }
+
+    .change-background {
+        display: none;
+    }
+}
+
+.landing .bullets {
+    position: absolute; /*true*/
+    left: 50%; /*true*/
+    transform: translateX(-50%); /*true*/
+    bottom: 30px; /*true*/
+    display: flex; /*true*/
+    justify-content: space-between;
+    gap: 10px;
+    width: 80px;
+}
+
+.landing .bullets li {
+    border: 1px solid white; /*true*/
+    border-radius: 50%; /*true*/
+    width: 20px; /*true*/
+    height: 20px; /*true*/
+    transition: var(--duration);
+}
+
+.landing .bullets li.active {
+    background-color: var(--main-color); /*true*/
+    border-color: var(--main-color); /*true*/
+}
+
+.landing .bullets li:hover:not(.active) {
+    background-color: var(--transparent-color);
+    border-color: var(--transparent-color);
+}
+
+/************* Ennnd landing *************/
+/************* Start services *************/
+/*الاختلاف بيننا انه لم يعمل ريسيت للخصائص ولكن وضعها داخل مجال الموبايل فقط*/
+
+.services .boxes .box {
+    display: flex; /*true*/
+    flex-direction: column; /*true*/
+    margin-bottom: 40px; /*true*/
+    text-align: center;/*true*/
+}
+
+
+.services .boxes .box i {
+    margin-bottom: 20px;
+    color: var(--main-color);
+}
+
+@media (min-width: 768px) {
+    .services .boxes {
+        display: grid; /*true*/
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); /*true*/
+        grid-column-gap: 40px; /*true*/
+        grid-row-gap: 60px; /*true*/
+    }
+
+    .services .boxes .box {
+        flex-direction: row;
+        text-align: unset;
+        margin-bottom: 0px;
+    }
+    .services .boxes .box i {
+        margin: 0 50px 0 0;
+        max-width: 48px; /*me true*/
+        box-sizing: content-box;
+    }
+}
+
+
+.services .boxes .box h3 {
+    margin-bottom: 20px; /*true*/
+    color: var(--main-color); /*true*/
+}
+
+.services .boxes .box p {
+    color: var(--color-p); /*true*/
+    line-height: 2; /*true*/
+}
+
+/************* Ennnd services *************/
+
+/************* Start design section *************/
+.design_sec{
+    position: relative; /*true*/
+    background-size: cover; /*true*/
+    display: flex; /*true*/
+    justify-content: center;
+    align-content: center; /*true*/
+    background-color: #1f2021 ;
+    background-image: url("../img/design-features.jpg");/*true*/
+    height: 600px; /*true*/
+    overflow: hidden;
+}
+
+.design_sec .image{
+    z-index: 2; /*true*/
+    width: 50%;
+    display: flex;
+    justify-content: end;
+}
+.design_sec .image img{
+    position: relative; /*true*/
+    bottom: -110px; /*true*/
+    margin: auto;
+}
+
+.design_sec .content{
+    z-index: 2;
+    background-color: var(--transparent-color); /*true*/
+    padding: 50px; /*true*/
+    color: white; /*true*/
+    align-self: center;
+    flex: 1;
+}
+.design_sec .content h2{
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+.design_sec .content li{
+    padding: 15px ; /*true*/
+}
+.design_sec .content li:before{
+    content: "\f108"; /*true*/
+    font-family: "Font Awesome 6 Pro"; /*true*/
+    position: relative; /*true*/
+    top: 1px ; /*true*/
+    font-weight: 900; /*true*/
+    margin-right: 20px; /*true*/
+}
+
+@media (max-width: 767px) {
+    .design_sec .image{
+        display: none;
+    }
+}
+
+/************* Ennnd design section *************/
+/************* Start portfolio *************/
+.portfolio ul{
+    display: flex; /*true*/
+    width: 100%;
+    justify-content: center; /*true*/
+    gap: 10px;
+    margin-bottom: 60px;
+}
+.portfolio ul li{
+    padding: 10px; /*true*/
+    text-transform: capitalize;
+    cursor: pointer; /*true*/
+}
+.portfolio ul li.active{
+    background-color: var(--main-color); /*true*/
+    color: white; /*true*/
+}
+.portfolio ul li:hover{
+    background-color: var(--main-color);
+    opacity: 0.7;
+    color: white;
+}
+
+.portfolio .imgs-container{
+    display: grid;
+}
+@media (min-width: 768px) {
+    .portfolio .imgs-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 1199px) {
+    .portfolio .imgs-container{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.portfolio .imgs-container .box{
+    position: relative; /*true*/
+    overflow: hidden; /*true*/
+}
+.portfolio .imgs-container .box img{
+    transition: 0.3s;
+    max-width: 100%;
+    height: inherit;
+    object-fit: cover;
+}
+.portfolio .imgs-container .box .img_caption{
+    position: absolute; /*true*/
+    left: 0; /*true*/
+    transition: 0.3s; /*true*/
+    padding: 20px; /*true*/
+    width: 100%; /*true*/
+    background: white; /*true*/
+    z-index: 2; /*true*/
+    bottom: -85px; /*true*/
+}
+.portfolio .imgs-container .box:hover .img_caption{
+    bottom: 0; /*true*/
+}
+.portfolio .imgs-container .box:hover img{
+    transform: rotate(3deg) scale(1.1); /*true*/
+}
+
+.portfolio .imgs-container .box .img_caption h4{
+    font-weight: normal; /*true*/
+    margin-bottom: 10px; /*true*/
+}
+.portfolio .imgs-container .box .img_caption p{
+    color: var(--main-color); /*true*/
+}
+
+
+
+.portfolio .more{
+    background: var(--main-color);
+    color: white;
+    padding: 15px 20px;
+    margin: 30px auto 0 ;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: fit-content;
+}
+/************* Ennnd portfolio *************/
+
+/************* Start video *************/
+.video{
+    position: relative; /*true*/
+}
+.video video{
+    width: 100%;
+}
+.video:before{
+    content: ''; /*true*/
+    width: 100%;/*true*/
+    height: 100%;/*true*/
+    position: absolute; /*true*/
+    left: 0; /*true*/
+    top: 0;/*true*/
+    background-color: rgba(0, 0, 0, 0.6);/*true*/
+}
+.video .content {
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    background: var(--transparent-color);
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 50px;
+}
+.video .content h2{
+    font-weight: normal;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+.video .content p {
+    margin-bottom: 30px;
+}
+.video .content a {
+    color: white;
+    text-decoration: none;
+    background: black;
+    padding: 10px 20px;
+    display: inline-block;
+}
+/************* Ennnd video *************/
+/************* Start about_sec *************/
+.about{
+    padding-bottom: 0;
+    overflow: hidden;
+    text-align: center;
+}
+.about img{
+    bottom: -120px;
+    position: relative;
+    margin-top: -120px;
+    max-width: 100%;
+}
+@media (max-width: 767px) {
+    .about img{
+        bottom: -60px;
+        margin-top: -60px;
+    }
+}
+/************* Ennnd about_sec *************/
+
+/************* Start stats *************/
+.stats{
+    position: relative; /*true*/
+    background-image: url(../img/stats.png); /*true*/
+    background-size: cover; /*true*/
+}
+.stats::before{
+    content: ''; /*true*/
+    width: 100%;/*true*/
+    height: 100%;/*true*/
+    position: absolute; /*true*/
+    left: 0; /*true*/
+    top: 0;/*true*/
+    background-color: rgba(0, 0, 0, 0.7);/*true*/
+}
+.stats .content{
+    display: flex; /*true*/
+    justify-content: center;
+    align-items: center;
+    position: relative; /*ture*/
+    text-align: center; /*ture*/
+    /*grid-template-columns: 1fr; */ /*when use grid*/
+    flex-wrap: wrap; /*ture*/
+}
+/*@media (min-width: 767px) {*/ /*when use grid*/
+/*    .stats .content {*/
+/*        grid-template-columns: 1fr 1fr;*/
+/*    }*/
+/*}*/
+/*@media (min-width: 992px) {*/
+/*    .stats .content {*/
+/*        grid-template-columns: repeat(4 , 1fr);*/
+/*    }*/
+/*}*/
+.stats .box{
+    background-color: var(--transparent-color); /*ture*/
+    color: white; /*ture*/
+    padding: 50px; /*ture*/
+    flex-basis: 100%;
+}
+@media (min-width: 768px) {
+    .stats .box {
+        flex-basis: 50%;
+    }
+}
+@media (min-width: 992px) {
+    .stats .box {
+        flex-basis: 25%;
+    }
+}
+.stats i{
+    background: black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.stats .number{
+    margin: 30px 0 20px;
+    font-size: 50px;
+    font-weight: bold;
+}
+.stats p{
+    font-size: 14px;
+}
+
+/************* Ennnd stats *************/
+/************* Start our skills  *************/
+.our-skills .container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.our-skills .testimonials > h2 ,
+.our-skills .skills > h2{
+    font-size: 19px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+.our-skills .testimonials > p ,
+.our-skills .skills > p{
+    color: var(--color-p);
+    line-height: 2;
+    margin-bottom: 50px;
+}
+.our-skills .testimonials .content .box{
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+.our-skills .testimonials .content .box img {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+.our-skills .testimonials .content .box p {
+    line-height: 2;
+    margin-bottom: 10px;
+}
+.our-skills .testimonials .content .box h3 {
+    text-align: right;
+    font-weight: lighter;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.our-skills .testimonials .bullets {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 50px 0;
+    list-style: none;
+    gap: 10px;
+}
+.our-skills .testimonials .bullets li {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+}
+.our-skills .testimonials .bullets li.active {
+    background-color: var(--main-color);
+}
+/************* Ennnd our skills  *************/
