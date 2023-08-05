@@ -15,7 +15,7 @@
 }
 
 html {
-
+    scroll-behavior: smooth;
 
 }
 
@@ -343,7 +343,7 @@ header nav .form i {
     display: flex; /*true*/
     flex-direction: column; /*true*/
     margin-bottom: 40px; /*true*/
-    text-align: center;/*true*/
+    text-align: center; /*true*/
 }
 
 
@@ -365,6 +365,7 @@ header nav .form i {
         text-align: unset;
         margin-bottom: 0px;
     }
+
     .services .boxes .box i {
         margin: 0 50px 0 0;
         max-width: 48px; /*me true*/
@@ -386,31 +387,32 @@ header nav .form i {
 /************* Ennnd services *************/
 
 /************* Start design section *************/
-.design_sec{
+.design_sec {
     position: relative; /*true*/
     background-size: cover; /*true*/
     display: flex; /*true*/
     justify-content: center;
     align-content: center; /*true*/
-    background-color: #1f2021 ;
-    background-image: url("../img/design-features.jpg");/*true*/
+    background-color: #1f2021;
+    background-image: url("../img/design-features.jpg"); /*true*/
     height: 600px; /*true*/
     overflow: hidden;
 }
 
-.design_sec .image{
+.design_sec .image {
     z-index: 2; /*true*/
     width: 50%;
     display: flex;
     justify-content: end;
 }
-.design_sec .image img{
+
+.design_sec .image img {
     position: relative; /*true*/
     bottom: -110px; /*true*/
     margin: auto;
 }
 
-.design_sec .content{
+.design_sec .content {
     z-index: 2;
     background-color: var(--transparent-color); /*true*/
     padding: 50px; /*true*/
@@ -418,78 +420,87 @@ header nav .form i {
     align-self: center;
     flex: 1;
 }
-.design_sec .content h2{
+
+.design_sec .content h2 {
     margin-bottom: 30px;
     font-weight: normal;
 }
 
-.design_sec .content li{
-    padding: 15px ; /*true*/
+.design_sec .content li {
+    padding: 15px; /*true*/
 }
-.design_sec .content li:before{
+
+.design_sec .content li:before {
     content: "\f108"; /*true*/
     font-family: "Font Awesome 6 Pro"; /*true*/
     position: relative; /*true*/
-    top: 1px ; /*true*/
+    top: 1px; /*true*/
     font-weight: 900; /*true*/
     margin-right: 20px; /*true*/
 }
 
 @media (max-width: 767px) {
-    .design_sec .image{
+    .design_sec .image {
         display: none;
     }
 }
 
 /************* Ennnd design section *************/
 /************* Start portfolio *************/
-.portfolio ul{
+.portfolio ul {
     display: flex; /*true*/
     width: 100%;
     justify-content: center; /*true*/
     gap: 10px;
     margin-bottom: 60px;
 }
-.portfolio ul li{
+
+.portfolio ul li {
     padding: 10px; /*true*/
     text-transform: capitalize;
     cursor: pointer; /*true*/
 }
-.portfolio ul li.active{
+
+.portfolio ul li.active {
     background-color: var(--main-color); /*true*/
     color: white; /*true*/
 }
-.portfolio ul li:hover{
+
+.portfolio ul li:hover {
     background-color: var(--main-color);
     opacity: 0.7;
     color: white;
 }
 
-.portfolio .imgs-container{
+.portfolio .imgs-container {
     display: grid;
 }
+
 @media (min-width: 768px) {
-    .portfolio .imgs-container{
+    .portfolio .imgs-container {
         grid-template-columns: 1fr 1fr;
     }
 }
+
 @media (min-width: 1199px) {
-    .portfolio .imgs-container{
+    .portfolio .imgs-container {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
 
-.portfolio .imgs-container .box{
+.portfolio .imgs-container .box {
     position: relative; /*true*/
     overflow: hidden; /*true*/
 }
-.portfolio .imgs-container .box img{
+
+.portfolio .imgs-container .box img {
     transition: 0.3s;
     max-width: 100%;
     height: inherit;
     object-fit: cover;
 }
-.portfolio .imgs-container .box .img_caption{
+
+.portfolio .imgs-container .box .img_caption {
     position: absolute; /*true*/
     left: 0; /*true*/
     transition: 0.3s; /*true*/
@@ -499,71 +510,80 @@ header nav .form i {
     z-index: 2; /*true*/
     bottom: -85px; /*true*/
 }
-.portfolio .imgs-container .box:hover .img_caption{
+
+.portfolio .imgs-container .box:hover .img_caption {
     bottom: 0; /*true*/
 }
-.portfolio .imgs-container .box:hover img{
+
+.portfolio .imgs-container .box:hover img {
     transform: rotate(3deg) scale(1.1); /*true*/
 }
 
-.portfolio .imgs-container .box .img_caption h4{
+.portfolio .imgs-container .box .img_caption h4 {
     font-weight: normal; /*true*/
     margin-bottom: 10px; /*true*/
 }
-.portfolio .imgs-container .box .img_caption p{
+
+.portfolio .imgs-container .box .img_caption p {
     color: var(--main-color); /*true*/
 }
 
 
-
-.portfolio .more{
+.portfolio .more {
     background: var(--main-color);
     color: white;
     padding: 15px 20px;
-    margin: 30px auto 0 ;
+    margin: 30px auto 0;
     display: block;
     text-decoration: none;
     text-transform: uppercase;
     width: fit-content;
 }
+
 /************* Ennnd portfolio *************/
 
 /************* Start video *************/
-.video{
+.video {
     position: relative; /*true*/
 }
-.video video{
+
+.video video {
     width: 100%;
 }
-.video:before{
+
+.video:before {
     content: ''; /*true*/
-    width: 100%;/*true*/
-    height: 100%;/*true*/
+    width: 100%; /*true*/
+    height: 100%; /*true*/
     position: absolute; /*true*/
     left: 0; /*true*/
-    top: 0;/*true*/
-    background-color: rgba(0, 0, 0, 0.6);/*true*/
+    top: 0; /*true*/
+    background-color: rgba(0, 0, 0, 0.6); /*true*/
 }
+
 .video .content {
     position: absolute;
     z-index: 4;
     left: 50%;
     top: 50%;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     background: var(--transparent-color);
     color: white;
     width: 100%;
     text-align: center;
     padding: 50px;
 }
-.video .content h2{
+
+.video .content h2 {
     font-weight: normal;
     margin-bottom: 30px;
     text-transform: uppercase;
 }
+
 .video .content p {
     margin-bottom: 30px;
 }
+
 .video .content a {
     color: white;
     text-decoration: none;
@@ -571,43 +591,49 @@ header nav .form i {
     padding: 10px 20px;
     display: inline-block;
 }
+
 /************* Ennnd video *************/
 /************* Start about_sec *************/
-.about{
+.about {
     padding-bottom: 0;
     overflow: hidden;
     text-align: center;
 }
-.about img{
+
+.about img {
     bottom: -120px;
     position: relative;
     margin-top: -120px;
     max-width: 100%;
 }
+
 @media (max-width: 767px) {
-    .about img{
+    .about img {
         bottom: -60px;
         margin-top: -60px;
     }
 }
+
 /************* Ennnd about_sec *************/
 
 /************* Start stats *************/
-.stats{
+.stats {
     position: relative; /*true*/
     background-image: url(../img/stats.png); /*true*/
     background-size: cover; /*true*/
 }
-.stats::before{
+
+.stats::before {
     content: ''; /*true*/
-    width: 100%;/*true*/
-    height: 100%;/*true*/
+    width: 100%; /*true*/
+    height: 100%; /*true*/
     position: absolute; /*true*/
     left: 0; /*true*/
-    top: 0;/*true*/
-    background-color: rgba(0, 0, 0, 0.7);/*true*/
+    top: 0; /*true*/
+    background-color: rgba(0, 0, 0, 0.7); /*true*/
 }
-.stats .content{
+
+.stats .content {
     display: flex; /*true*/
     justify-content: center;
     align-items: center;
@@ -616,6 +642,7 @@ header nav .form i {
     /*grid-template-columns: 1fr; */ /*when use grid*/
     flex-wrap: wrap; /*ture*/
 }
+
 /*@media (min-width: 767px) {*/ /*when use grid*/
 /*    .stats .content {*/
 /*        grid-template-columns: 1fr 1fr;*/
@@ -626,23 +653,26 @@ header nav .form i {
 /*        grid-template-columns: repeat(4 , 1fr);*/
 /*    }*/
 /*}*/
-.stats .box{
+.stats .box {
     background-color: var(--transparent-color); /*ture*/
     color: white; /*ture*/
     padding: 50px; /*ture*/
     flex-basis: 100%;
 }
+
 @media (min-width: 768px) {
     .stats .box {
         flex-basis: 50%;
     }
 }
+
 @media (min-width: 992px) {
     .stats .box {
         flex-basis: 25%;
     }
 }
-.stats i{
+
+.stats i {
     background: black;
     border-radius: 50%;
     width: 40px;
@@ -652,44 +682,48 @@ header nav .form i {
     align-items: center;
     margin: 0 auto;
 }
-.stats .number{
+
+.stats .number {
     margin: 30px 0 20px;
     font-size: 50px;
     font-weight: bold;
 }
-.stats p{
+
+.stats p {
     font-size: 14px;
 }
 
 /************* Ennnd stats *************/
 /************* Start our skills  *************/
-.our-skills .container{
+.our-skills .container {
     display: flex; /*true*/
-    justify-content: space-between;/*true*/
+    justify-content: space-between; /*true*/
     flex-wrap: wrap; /*true*/
 }
 
 @media (min-width: 992px) {
-    .our-skills .container >div {
+    .our-skills .container > div {
         flex-basis: 45%; /*true*/
     }
 
 }
 
-.our-skills .container >div > h3{
+.our-skills .container > div > h3 {
     text-transform: uppercase;
     text-align: center; /*true*/
     font-weight: normal; /*true*/
     margin-bottom: 30px; /*true*/
 }
+
 .our-skills .container > div > p {
     color: var(--color-p);
     text-align: center; /*true*/
     line-height: 2; /*true*/
     margin-bottom: 50px; /*true*/
 }
+
 /*testimonials*/
-.our-skills .testimonials .content .box{
+.our-skills .testimonials .content .box {
     display: flex; /*true*/
     margin-bottom: 20px; /*true*/
     align-items: flex-start;
@@ -703,23 +737,25 @@ header nav .form i {
 }
 
 @media (max-width: 767px) {
-    .our-skills .testimonials .content .box{
+    .our-skills .testimonials .content .box {
         flex-direction: column; /*true*/
         text-align: center; /*true*/
     }
+
     .our-skills .testimonials .content .box img {
         margin: 0 auto 20px; /*true*/
     }
 }
 
-.our-skills .testimonials .content .box .text{
+.our-skills .testimonials .content .box .text {
     border-bottom: 1px solid #ccc; /*true*/
 }
 
 .our-skills .testimonials .content .box p {
-    line-height: 2;  /*true*/
+    line-height: 2; /*true*/
     margin-bottom: 10px; /*true*/
 }
+
 .our-skills .testimonials .content .box h3 {
     text-align: right; /*true*/
     font-weight: normal;
@@ -728,44 +764,51 @@ header nav .form i {
     color: #777; /*true*/
     font-family: cursive;
 }
+
 .our-skills .testimonials .bullets {
     display: flex; /*true*/
     justify-content: center; /*true*/
     margin: 50px 0; /*true*/
-    gap: 10px;/*true*/
+    gap: 10px; /*true*/
 }
+
 .our-skills .testimonials .bullets li {
     width: 15px; /*true*/
     height: 15px; /*true*/
-    border: 1px solid #aaa;  /*true*/
+    border: 1px solid #aaa; /*true*/
     border-radius: 50%; /*true*/
 }
+
 .our-skills .testimonials .bullets li.active {
     background-color: var(--main-color); /*true*/
 }
 
 /*skills */
-.our-skills .skills .prog-holder{
-     margin-bottom: 40px; /*true*/
+.our-skills .skills .prog-holder {
+    margin-bottom: 40px; /*true*/
 }
-.our-skills .skills .content .prog-holder h4{
+
+.our-skills .skills .content .prog-holder h4 {
     font-weight: normal; /*true*/
     margin-bottom: 15px; /*true*/
     text-transform: uppercase; /*true*/
 }
-.our-skills .skills .prog{
+
+.our-skills .skills .prog {
     background-color: #dedadc; /*true*/
     width: 100%;
     height: 30px; /*true*/
     margin-top: 10px;
 }
-.our-skills .skills .prog span{
+
+.our-skills .skills .prog span {
     position: relative; /*true*/
     height: 100%; /*true*/
     background-color: var(--main-color); /*true*/
     display: block; /*true*/
 }
-.our-skills .skills .prog span::before{
+
+.our-skills .skills .prog span::before {
     content: attr(data-prog);
     position: absolute;
     left: calc(100% - 20px);
@@ -777,7 +820,8 @@ header nav .form i {
     border-radius: 4px;
     width: 40px;
 }
-.our-skills .skills .prog span::after{
+
+.our-skills .skills .prog span::after {
     content: '';
     position: absolute;
     /* height: 0px; */
@@ -786,68 +830,80 @@ header nav .form i {
     border: 7px solid;
     border-color: black transparent transparent transparent;
 }
+
 /************* Ennnd our skills  *************/
 /************* start quote  *************/
-.quote{
-    position: relative;/*true*/
-    text-align: center;/*true*/
+.quote {
+    position: relative; /*true*/
+    text-align: center; /*true*/
     background: url("/img/quote.jpg"); /*true*/
     background-size: cover; /*true*/
-    color: white;/*true*/
+    color: white; /*true*/
 
 }
-.quote:before{
-    content: '';/*true*/
-    position: absolute;/*true*/
-    background: rgba(0, 0, 0, 0.75);/*true*/
-    top: 0;/*true*/
-    right: 0;/*true*/
-    width: 100%;/*true*/
-    height: 100%;/*true*/
+
+.quote:before {
+    content: ''; /*true*/
+    position: absolute; /*true*/
+    background: rgba(0, 0, 0, 0.75); /*true*/
+    top: 0; /*true*/
+    right: 0; /*true*/
+    width: 100%; /*true*/
+    height: 100%; /*true*/
 }
-.quote .container{
+
+.quote .container {
     position: relative; /*true*/
 }
-q{
+
+q {
     font-size: 30px; /*true*/
     margin-bottom: 20px; /*true*/
     display: block; /*true*/
 }
-q::before,q::after {
+
+q::before, q::after {
     content: "“";
     font-family: Georgia;
     font-size: 1.4em;
 }
+
 q::after {
     content: "\e14c";
     font-family: 'Font Awesome 6 Pro';
 }
+
 /************* Ennnd quote  *************/
 /************* start pricing  *************/
-.pricing .plans{
+.pricing .plans {
     display: grid;
-    grid-template-columns: repeat(auto-fill , minmax(250px , 1fr) );
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr) );
     gap: 20px;
 }
-.pricing .plans .plan{
+
+.pricing .plans .plan {
     background-color: #fcfcfc;
     text-align: center;
 }
-.pricing .plans .plan .head{
+
+.pricing .plans .plan .head {
     padding: 40px 20px;
     border-top: 1px solid var(--main-color);
     border-bottom: 1px solid var(--main-color);
 }
-.pricing .plans .plan h3{
+
+.pricing .plans .plan h3 {
     margin-bottom: 15px;
     font-weight: normal;
     text-transform: uppercase;
 }
-.pricing .plans .plan span{
+
+.pricing .plans .plan span {
     font-size: 60px;
     font-weight: bold;
 }
-.pricing .plans .plan span:before{
+
+.pricing .plans .plan span:before {
     content: '$';
     position: relative;
     font-size: 25px;
@@ -855,28 +911,148 @@ q::after {
     margin-right: 15px;
     font-weight: normal;
 }
-.pricing .plans .plan span:after{
+
+.pricing .plans .plan span:after {
     content: '/Mo';
     position: relative;
     font-size: 20px;
     left: 15px;
 }
-.pricing .plans .plan .body{
 
+.pricing .plans .plan .body {
+    border-bottom: 1px solid var(--main-color); /*true*/
 }
-.pricing .plans .plan .body li{
 
+.pricing .plans .plan .body li {
+    padding: 20px; /*true*/
+    position: relative; /*true*/
 }
-.pricing .plans .plan .foot{
 
+.pricing .plans .plan .body li:not(:last-child):before {
+    content: ''; /*true*/
+    width: 140px; /*true*/
+    height: 1px; /*true*/
+    background: var(--main-color); /*true*/
+    position: absolute; /*true*/
+    bottom: 0; /*true*/
+    left: 50%; /*true*/
+    transform: translateX(-50%); /*true*/
 }
-.pricing .plans .plan .foot a{
 
+.pricing .plans .plan .foot a {
+    padding: 20px; /*true*/
+    margin: 30px auto; /*true*/
+    display: block; /*true*/
+    text-transform: uppercase;
+    text-decoration: none;/*true*/
+    border: 1px solid var(--main-color); /*true*/
+    width: fit-content; /*true*/
 }
-.pricing .contact-text{
 
+.pricing .contact-text {
+    text-align: center; /*true*/
+    margin-top: 50px; /*true*/
+    font-size: 20px; /*true*/
 }
-.pricing .contact-link{
 
- }
+.pricing .contact-link {
+    padding: 15px 30px; /*true*/
+    margin: 20px auto; /*true*/
+    display: block; /*true*/
+    text-decoration: none; /*true*/
+    text-transform: capitalize;
+    background: var(--main-color); /*true*/
+    width: fit-content; /*true*/
+    color: white; /*true*/
+}
+.button_fill{
+    background: transparent !important;
+    color: black !important;
+    position: relative;
+    transition: color 0.5s ease-in-out;
+}
+.button_fill:before{
+    content: '';
+    background: var(--main-color) ;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 10%;
+    position: absolute;
+    z-index: -1;
+    transition: all 0.4s ease-in-out;
+}
+.button_fill:hover{
+    color: white !important;
+}
+.button_fill:hover:before{
+    width: 100%;
+}
+
 /************* Ennnd pricing  *************/
+/********************* start subscribe  ************************/
+.subscribe{
+    background: url("../img/subscribe.jpg");
+    color: white;
+    position: relative;
+}
+.subscribe .container{
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+@media (max-width: 991px) {
+    .subscribe .container{
+        flex-direction: column;
+
+    }
+}
+.subscribe form{
+    display: flex;
+    width: 500px;
+    flex: 1;
+    max-width: 100%;
+    position: relative;
+    caret-color: var(--main-color);
+}
+.subscribe form i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 25px;
+}
+
+.subscribe form input[type='email']{
+    width: calc(100% - 130px);
+    background: transparent;
+    color: var(--main-color);
+    padding: 20px 20px 20px 60px;
+    border: 1px solid white;
+    border-right: none;
+}
+.subscribe form input[type='email']::placeholder{
+    color: white;
+}
+.subscribe form button[type='submit']{
+    width: 130px;
+    padding: 10px 20px;
+    color: var(--main-color) !important; ;
+    z-index: 1;
+    border: 1px solid white;
+    border-left: none;
+    text-transform: uppercase;
+}
+.subscribe form button[type='submit']:hover{
+    color: white !important; ;
+}
+.subscribe p{
+    margin-left: 50px;
+    line-height: 2;
+    flex: 1;
+}
+@media (max-width: 991px) {
+    .subscribe p{
+        margin: 20px 0;
+    }
+}
+/********************* ennnd subscribe  ************************/
