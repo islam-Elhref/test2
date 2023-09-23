@@ -4,6 +4,7 @@
     --main-color: #19c8fa;
     --duration: 0.3s;
     --transparent-color: rgba(15, 116, 143, 0.7);
+    --padding-sec: 100px;
 }
 
 * {
@@ -69,8 +70,8 @@ ul {
 }
 
 .sec-padding {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: var(--padding-sec);
+    padding-bottom: var(--padding-sec);
 }
 
 .main-heading {
@@ -119,6 +120,35 @@ ul {
     line-height: 25pt;
 }
 
+/*start button fill component*/
+.button_fill {
+    background: transparent !important;
+    color: black !important;
+    position: relative;
+    transition: color 0.5s ease-in-out;
+}
+
+.button_fill:before {
+    content: '';
+    background: var(--main-color);
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 10%;
+    position: absolute;
+    z-index: -1;
+    transition: all 0.4s ease-in-out;
+}
+
+.button_fill:hover {
+    color: white !important;
+}
+
+.button_fill:hover:before {
+    width: 100%;
+}
+
+/*end button fill component*/
 /************* Ennnd component *************/
 
 /************* Start Header *************/
@@ -219,7 +249,7 @@ header nav .form {
 
 header nav .form i {
     color: white; /*true*/
-    padding: 8px 0px 8px 15px;
+    padding: 8px 0 8px 15px;
 }
 
 /************* Ennnd Header *************/
@@ -259,7 +289,7 @@ header nav .form i {
 }
 
 .landing .text p {
-    font-family: 'Myriad Pro';
+    font-family: 'Myriad Pro', serif;
     font-size: 13pt;
     line-height: 28pt; /*true*/
 }
@@ -363,7 +393,7 @@ header nav .form i {
     .services .boxes .box {
         flex-direction: row;
         text-align: unset;
-        margin-bottom: 0px;
+        margin-bottom: 0;
     }
 
     .services .boxes .box i {
@@ -432,7 +462,7 @@ header nav .form i {
 
 .design_sec .content li:before {
     content: "\f108"; /*true*/
-    font-family: "Font Awesome 6 Pro"; /*true*/
+    font-family: "Font Awesome 6 Pro", sans-serif; /*true*/
     position: relative; /*true*/
     top: 1px; /*true*/
     font-weight: 900; /*true*/
@@ -864,20 +894,20 @@ q {
 
 q::before, q::after {
     content: "“";
-    font-family: Georgia;
+    font-family: Georgia, serif;
     font-size: 1.4em;
 }
 
 q::after {
     content: "\e14c";
-    font-family: 'Font Awesome 6 Pro';
+    font-family: 'Font Awesome 6 Pro', serif;
 }
 
 /************* Ennnd quote  *************/
 /************* start pricing  *************/
 .pricing .plans {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr) );
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
 
@@ -944,7 +974,7 @@ q::after {
     margin: 30px auto; /*true*/
     display: block; /*true*/
     text-transform: uppercase;
-    text-decoration: none;/*true*/
+    text-decoration: none; /*true*/
     border: 1px solid var(--main-color); /*true*/
     width: fit-content; /*true*/
 }
@@ -965,94 +995,234 @@ q::after {
     width: fit-content; /*true*/
     color: white; /*true*/
 }
-.button_fill{
-    background: transparent !important;
-    color: black !important;
-    position: relative;
-    transition: color 0.5s ease-in-out;
-}
-.button_fill:before{
-    content: '';
-    background: var(--main-color) ;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 10%;
-    position: absolute;
-    z-index: -1;
-    transition: all 0.4s ease-in-out;
-}
-.button_fill:hover{
-    color: white !important;
-}
-.button_fill:hover:before{
-    width: 100%;
-}
 
 /************* Ennnd pricing  *************/
 /********************* start subscribe  ************************/
-.subscribe{
-    background: url("../img/subscribe.jpg");
-    color: white;
-    position: relative;
+.subscribe {
+    background: url("../img/subscribe.jpg"); /*true*/
+    background-size: cover; /*true*/
+    color: white; /*true*/
+    position: relative; /*true*/
 }
-.subscribe .container{
+
+.subscribe .container {
+    display: flex; /*true*/
+    position: relative; /*true*/
+    align-items: center; /*true*/
+}
+
+@media (max-width: 991px) {
+    .subscribe .container {
+        flex-direction: column; /*true*/
+
+    }
+}
+
+.subscribe form {
+    display: flex; /*true*/
+    width: 500px; /*true*/
+    max-width: 100%; /*true*/
+    position: relative; /*true*/
+
+}
+
+.subscribe form i {
+    position: absolute; /*true*/
+    top: 50%; /*true*/
+    transform: translateY(-50%); /*true*/
+    left: 25px; /*true*/
+}
+
+.subscribe form input[type='email'] {
+    width: calc(100% - 130px);
+    background: transparent; /*true*/
+    color: var(--main-color);
+    padding: 20px 20px 20px 60px; /*true*/
+    border: 1px solid white; /*true*/
+    border-right: none; /*true*/
+    caret-color: var(--main-color); /*true*/
+}
+
+.subscribe form input[type='email']::placeholder {
+    color: white; /*true*/
+}
+
+.subscribe form button[type='submit'] {
+    width: 130px; /*true*/
+    padding: 10px 20px; /*true*/
+    color: var(--main-color) !important;; /*true*/
+    z-index: 1;
+    text-transform: uppercase; /*true*/
+    border: 1px outset white; /*true*/
+    border-left: none; /*true*/
+}
+
+.subscribe form button:active {
+    border-style: inset;
+    border-left: none;
+}
+
+.subscribe form *:focus {
+    outline: none;
+}
+
+.subscribe form button[type='submit']:hover {
+    color: white !important;;
+}
+
+.subscribe p {
+    margin-left: 50px; /*true*/
+    line-height: 2; /*true*/
+}
+
+@media (max-width: 991px) {
+    .subscribe p {
+        margin: 30px 0 0;
+    }
+}
+
+/********************* ennnd subscribe  ************************/
+/*********************  start contact-us  ************************/
+.contact .content {
+    display: flex; /*true*/
+    justify-content: space-between; /*true*/
+}
+
+@media (max-width: 767px) {
+    .contact .content {
+        flex-direction: column; /*true*/
+    }
+}
+
+.contact .content form {
+    flex-basis: 70%; /*true*/
+}
+
+
+.contact .content form .contact-input {
+    padding: 20px; /*true*/
+    display: block; /*true*/
+    width: 100%; /*true*/
+    margin-bottom: 30px; /*true*/
+    border: 1px solid var(--main-color); /*true*/
+
+}
+
+.contact .content form .contact-input:focus {
+    outline: none; /*true*/
+}
+
+.contact .content form textarea.contact-input {
+    height: 200px; /*true*/
+    resize: vertical;
+}
+
+.contact .content form button.button_fill {
+    padding: 15px 30px; /*true*/
+    display: flex; /*true*/
+    margin-left: auto; /*true*/
+    text-transform: uppercase; /*true*/
+    border: 1px solid var(--main-color);
+    cursor: pointer; /*true*/
+}
+
+
+.contact .content .info {
+    flex-basis: 25%; /*true*/
+}
+
+@media (max-width: 767px) {
+    .contact .content .info {
+        order: -1; /*true*/
+        text-align: center; /*true*/
+        margin-bottom: 20px; /*true*/
+    }
+}
+
+.contact .content .info h4 {
+    text-transform: uppercase; /*true*/
+    margin-bottom: 30px;
+    font-weight: 500; /*true*/
+    font-size: 18px; /*true*/
+}
+
+.contact .content .info span.phone {
+    display: block; /*true*/
+    margin-bottom: 10px; /*true*/
+    color: var(--color-p); /*true*/
+}
+
+.contact .content .info h4:nth-of-type(2) {
+    margin-top: 80px;
+}
+
+@media (max-width: 767px) {
+    .contact .content .info h4:nth-of-type(2) {
+        margin-top: 30px;
+    }
+}
+
+.contact .content .info address {
+    line-height: 2;
+    color: var(--color-p);
+}
+
+/*********************  Ennnd contact-us  ************************/
+/*********************  start footer  ************************/
+.footer {
+    color: white; /*true*/
+    position: relative; /*true*/
+    background-image: url("../img/subscribe.jpg"); /*true*/
+    background-size: cover; /*true*/
+    background-color: #1f2021;
+    padding-top: calc(var(--padding-sec) / 2);
+    padding-bottom: calc(var(--padding-sec) / 2);
+}
+
+.footer .overlay {
+    background-color: rgba(0, 0, 0, 0.7); /*true*/
+}
+
+.footer .container {
+    position: relative; /*true*/
     display: flex;
-    position: relative;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
-@media (max-width: 991px) {
-    .subscribe .container{
-        flex-direction: column;
 
-    }
-}
-.subscribe form{
-    display: flex;
-    width: 500px;
-    flex: 1;
-    max-width: 100%;
-    position: relative;
-    caret-color: var(--main-color);
-}
-.subscribe form i{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 25px;
+.footer .container .logo {
+    margin-bottom: 20px; /*true 20px*/
 }
 
-.subscribe form input[type='email']{
-    width: calc(100% - 130px);
-    background: transparent;
-    color: var(--main-color);
-    padding: 20px 20px 20px 60px;
-    border: 1px solid white;
-    border-right: none;
-}
-.subscribe form input[type='email']::placeholder{
-    color: white;
-}
-.subscribe form button[type='submit']{
-    width: 130px;
-    padding: 10px 20px;
-    color: var(--main-color) !important; ;
-    z-index: 1;
-    border: 1px solid white;
-    border-left: none;
+.footer .container .content h4 {
+    font-weight: 400;
     text-transform: uppercase;
+    margin: 20px auto;
+    text-align: center;
+    border-bottom: 1px solid var(--main-color);
+    padding: 20px;
+    font-size: 22px;
 }
-.subscribe form button[type='submit']:hover{
-    color: white !important; ;
+
+.footer .container .content .social {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 60px;
 }
-.subscribe p{
-    margin-left: 50px;
-    line-height: 2;
-    flex: 1;
+
+.footer .container .content .social a {
+    color: white;
+    padding: 10px 15px;
 }
-@media (max-width: 991px) {
-    .subscribe p{
-        margin: 20px 0;
-    }
+
+.footer .container .p-footer {
+    text-transform: capitalize;
 }
-/********************* ennnd subscribe  ************************/
+
+.footer .container .p-footer span {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+/*********************  ennnd footer  ************************/
